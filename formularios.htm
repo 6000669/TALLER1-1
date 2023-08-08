@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<h1>Javascript ─ Formularios ─</h1>
+		<b> Nombre</b> <input type="text" id="nombre">	
+		<button onclick="Salude()">Saludos</button>
+		<script>
+		function Salude () {
+			name = document.getElementById("nombre").value;
+			alert("Hola " + name + ", buenas tardes");
+		}
+		</script>
+		<br/><br/>
+		<h1>Transformacion de traslacion. </h1>
+		<p>Coordenada inicial <input id ="c-i" size=0></p>
+		<p>Coordenada final <input id ="c-f" size=0></p>
+		<p><b> VECTOR TRASLACION </b></p>
+		<p> Coordenada Traslacion <input id ="c-t" size=0></p></br>
+		<button onclick="location.href = 'index.html';">Regresar</button>
+	</body>
+</html>
