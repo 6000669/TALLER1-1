@@ -1,20 +1,71 @@
 <html>
-	<body>
-		<h1>Javascript ─ Formularios ─</h1>
-		<b> Nombre</b> <input type="text" id="nombre">	
-		<button onclick="Salude()">Saludos</button>
-		<script>
-		function Salude () {
+<body>
+	<h1>Javascript ─ Formularios ─</h1>
+	<b> Nombre</b> <input type="text" id="nombre">
+	<button onclick="Salude()">Saludos</button>
+	<script>
+		function Salude() {
 			name = document.getElementById("nombre").value;
 			alert("Hola " + name + ", buenas tardes");
 		}
-		</script>
-		<br/><br/>
-		<h1>Transformacion de traslacion. </h1>
-		<p>Coordenada inicial <input id ="c-i" size=0></p>
-		<p>Coordenada final <input id ="c-f" size=0></p>
-		<p><b> VECTOR TRASLACION </b></p>
-		<p> Coordenada Traslacion <input id ="c-t" size=0></p></br>
-		<button onclick="location.href = 'index.html';">Regresar</button>
-	</body>
+	</script>
+	<br /><br />
+	<h1>Transformacion de traslacion. </h1>
+	<p>Coordenada inicial <input id="c-i" size="15"></p>
+	<p><b> VECTOR TRASLACION </b></p>
+	<p> Coordenada Traslacion <input id="c-t" size="15"></p></br>
+	<button onclick="realizarTraslacion()">Realizar Traslación</button>
+	<h1>Transformacion de escalado. </h1>
+	<p>Coordenada inicial <input id="c-ie" size="15"></p>
+	<p><b> VECTOR ESCALADO </b></p>
+	<p> Coordenada Escalado <input id="c-te" size="15"></p></br>
+	<button onclick="realizarEscalado()">Realizar Traslación</button>
+	<button onclick="location.href = 'index.html';">Regresar</button>
+	<script>
+		function realizarTraslacion() {
+			const coordenadaInicial = document.getElementById("c-i").value.split(',').map(parseFloat);
+			const vectorTraslacion = document.getElementById("c-t").value.split(',').map(parseFloat);
+
+
+			const X = coordenadaInicial[0];
+			const Y = coordenadaInicial[1];
+			const Z = coordenadaInicial[2];
+
+			// Coordenadas de traslación
+			const translationX = vectorTraslacion[0];
+			const translationY = vectorTraslacion[1];
+			const translationZ = vectorTraslacion[2];
+
+			// Las coordenadas trasladadas son las primeras tres componentes del resultado
+			const translatedX = X + translationX;
+			const translatedY = Y + translationY;
+			const translatedZ = Y + translationZ;
+
+			alert(`Coordenadas trasladadas: (${translatedX}, ${translatedY}, ${translatedZ})`);
+		}
+
+		function realizarEscalado() {
+
+			const coordenadaInicial = document.getElementById("c-ie").value.split(',').map(parseFloat);
+			const vectorTraslacion = document.getElementById("c-te").value.split(',').map(parseFloat);
+
+
+			const X = coordenadaInicial[0];
+			const Y = coordenadaInicial[1];
+			const Z = coordenadaInicial[2];
+
+			// Coordenadas de traslación
+			const escaladoX = vectorTraslacion[0];
+			const escaladoY = vectorTraslacion[1];
+			const escaladoZ = vectorTraslacion[2];
+
+			// Las coordenadas trasladadas son las primeras tres componentes del resultado
+			const escaleX = X * escaladoX;
+			const escaleY = Y * escaladoY;
+			const escaleZ = Y * escaladoZ;
+
+			alert(`Coordenadas trasladadas: (${escaleX}, ${escaleY}, ${escaleZ})`);
+		}
+	</script>
+</body>
 </html>
